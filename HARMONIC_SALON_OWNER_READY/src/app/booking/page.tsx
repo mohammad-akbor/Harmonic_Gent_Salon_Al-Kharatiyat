@@ -184,7 +184,7 @@ function BookingInner() {
         </section>
 
         <section className="glass rounded-2xl p-6 space-y-4">
-          <h2 className="text-lg font-bold text-[#d4af37] mb-2">2. Staff, Date & Time</h2>
+          <h2 className="text-lg font-bold text-[#d4af37] mb-2">2. Staff,Date &amp; Time </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm text-slate-400 mb-1">Staff</label>

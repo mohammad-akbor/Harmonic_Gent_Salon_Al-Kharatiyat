@@ -379,8 +379,26 @@ export default function AdminPage() {
                 <button type="submit" className="btn-glow py-2 px-4 rounded-lg flex-1">
                   {editStaffId ? "Save Update" : "+ Add Staff"}
                 </button>
-                {editStaffId && (
-                  <button type="button" onClick={() => { setEditStaffId(null); setStaffForm({ name: "", department: "Barber", phone: "", status: "Active", servicePercent: "40", productPercent: "5", salaryType: "Commission", fixedSalary: "0" }); }} className="px-3 py-2 rounded-lg bg-white/10 text-sm">
+                                {editStaffId && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEditStaffId(null);
+                      setStaffForm({
+                        name: "",
+                        department: "Barber",
+                        phone: "",
+                        email: "",
+                        password: "",
+                        status: "Active",
+                        servicePercent: "40",
+                        productPercent: "5",
+                        salaryType: "Commission",
+                        fixedSalary: "0",
+                      });
+                    }}
+                    className="px-3 py-2 rounded-lg bg-white/10 text-sm"
+                  >
                     Cancel
                   </button>
                 )}

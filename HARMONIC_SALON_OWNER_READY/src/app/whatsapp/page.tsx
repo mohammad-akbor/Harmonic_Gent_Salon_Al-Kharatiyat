@@ -211,7 +211,7 @@ export default function WhatsAppSendPage() {
             />
           </div>
           <button type="button" onClick={openWa} className="btn-glow w-full py-3 rounded-xl">
-            Open WhatsApp & Send
+           Open WhatsApp &amp; Send
           </button>
         </div>
 

@@ -195,7 +195,7 @@ export default function LoginPage() {
                   )}
                 </div>
                 <button type="submit" disabled={loading} className="btn-glow w-full py-3 rounded-xl disabled:opacity-60">
-                  {loading ? "Verifying..." : "Verify & Login"}
+                  {loading ? "Verifying..." : "Verify &amp; Login"}
                 </button>
                 <button type="button" onClick={sendOtp} className="w-full text-sm text-slate-400 hover:text-white">
                   Resend OTP
