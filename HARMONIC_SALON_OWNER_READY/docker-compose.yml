@@ -1,0 +1,29 @@
+# HARMONIC SALON — Docker Compose
+# Usage:
+#   1. Copy .env.local to .env (or use env_file below)
+#   2. docker compose up -d --build
+#   3. Open http://localhost:3000
+#
+# MongoDB is external (Atlas). No local mongo needed.
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: harmonic-salon
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=production
+      # Override NEXTAUTH_URL for Docker if needed:
+      # - NEXTAUTH_URL=http://localhost:3000
+    volumes:
+      # Persist local uploads if Cloudinary not used
+      - salon_uploads:/app/public/uploads
+    restart: unless-stopped
+
+volumes:
+  salon_uploads:

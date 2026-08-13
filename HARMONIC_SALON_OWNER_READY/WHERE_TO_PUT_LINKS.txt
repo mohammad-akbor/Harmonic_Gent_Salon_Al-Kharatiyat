@@ -1,0 +1,61 @@
+============================================================
+ কোথায় কোন লিংক / কী বসাবেন (MARKED)
+============================================================
+
+ফাইল:  .env.local   (আগে .env.example কপি করুন)
+কমান্ড:  cp .env.example .env.local
+
+------------------------------------------------------------
+1) MONGODB  (আবশ্যক)
+------------------------------------------------------------
+MONGODB_URI=mongodb+srv://USER:PASSWORD@CLUSTER.mongodb.net/harmonic_salon
+
+🔗 কোথায় পাবেন: https://cloud.mongodb.com → Connect → Drivers
+
+কোডে ব্যবহার:  src/lib/mongodb.ts
+
+------------------------------------------------------------
+2) NEXTAUTH (লগইন)
+------------------------------------------------------------
+NEXTAUTH_SECRET=লম্বা_র‍্যান্ডম_স্ট্রিং
+NEXTAUTH_URL=http://localhost:3000
+  লাইভে: https://YOUR-APP.vercel.app
+
+🔗 Secret বানান:  openssl rand -base64 32
+
+------------------------------------------------------------
+3) WHATSAPP BOOKING MESSAGE
+------------------------------------------------------------
+Option A — Meta (recommended):
+  WHATSAPP_PROVIDER=meta
+  WHATSAPP_PHONE_NUMBER_ID=..........
+  WHATSAPP_ACCESS_TOKEN=..........
+
+🔗 https://developers.facebook.com → WhatsApp → API Setup
+
+Option B — Twilio:
+  WHATSAPP_PROVIDER=twilio
+  TWILIO_ACCOUNT_SID=..........
+  TWILIO_AUTH_TOKEN=..........
+  TWILIO_WHATSAPP_FROM=whatsapp:+14155238886
+
+🔗 https://www.twilio.com/whatsapp
+
+কোডে ব্যবহার:  src/lib/whatsapp.ts
+
+------------------------------------------------------------
+4) ADMIN
+------------------------------------------------------------
+ADMIN_EMAIL=admin@harmonicsalon.com
+ADMIN_PASSWORD=ChangeThisPassword123
+
+তারপর:  npm run seed
+
+------------------------------------------------------------
+5) VERCEL DEPLOY
+------------------------------------------------------------
+Vercel → Project → Settings → Environment Variables
+উপরের সবগুলো একই নামে বসান
+NEXTAUTH_URL = https://your-app.vercel.app
+
+============================================================
