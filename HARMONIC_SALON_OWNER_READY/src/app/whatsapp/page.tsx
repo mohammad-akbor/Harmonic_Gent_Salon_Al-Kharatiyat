@@ -100,20 +100,18 @@ export default function WhatsAppSendPage() {
       <header className="glass sticky top-0 z-40 border-b border-white/5">
         <div className="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
           <Link href="/" className="text-[#d4af37] font-bold">
-            ← Home
+            Home
           </Link>
           <h1 className="font-bold text-lg">WhatsApp Send</h1>
-          <span className="text-xs text-slate-500">Free wa.me</span>
+          <span className="text-xs text-slate-500">Free</span>
         </div>
       </header>
 
       <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
         <div className="glass rounded-2xl p-5 space-y-3">
-          <p className="text-sm text-slate-400">
-            Free WhatsApp box — no API cost. Opens WhatsApp with message ready to send.
-          </p>
+          <p className="text-sm text-slate-400">Free WhatsApp send box</p>
           <div>
-            <label className="text-xs text-slate-400">Phone (+974…)</label>
+            <label className="text-xs text-slate-400">Phone</label>
             <input
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -136,7 +134,7 @@ export default function WhatsAppSendPage() {
         </div>
 
         <div className="glass rounded-2xl p-5 space-y-3">
-          <h2 className="font-bold text-[#d4af37]">From today&apos;s bookings</h2>
+          <h2 className="font-bold text-[#d4af37]">Today bookings</h2>
           {bookings.length === 0 && (
             <p className="text-sm text-slate-500">No bookings today</p>
           )}
@@ -148,7 +146,6 @@ export default function WhatsAppSendPage() {
               <div className="text-sm">
                 <span className="font-medium">{b.customerName}</span>
                 <span className="text-slate-400 ml-2">{b.customerPhone}</span>
-                <span className="text-slate-500 ml-2">{b.status}</span>
               </div>
               <div className="flex gap-1 flex-wrap">
                 <button
@@ -156,14 +153,14 @@ export default function WhatsAppSendPage() {
                   onClick={() => applyFromBooking(b, "confirmed")}
                   className="text-xs px-2 py-1 rounded bg-white/10"
                 >
-                  Confirm msg
+                  Confirm
                 </button>
                 <button
                   type="button"
                   onClick={() => applyFromBooking(b, "completed")}
                   className="text-xs px-2 py-1 rounded bg-white/10"
                 >
-                  Complete msg
+                  Complete
                 </button>
                 <button
                   type="button"
