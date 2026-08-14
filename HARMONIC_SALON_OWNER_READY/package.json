@@ -11,23 +11,27 @@
     "postinstall": "node scripts/ensure-nextauth-route.js",
     "fix-auth": "node scripts/ensure-nextauth-route.js",
     "backup": "node scripts/backup-mongo.js",
-    "clear-demo": "node scripts/clear-demo.js"
+    "clear-demo": "node scripts/clear-demo.js",
+    "clear-revenue": "node scripts/clear-revenue.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "date-fns": "^3.6.0",
-    "mongoose": "^8.5.0",
+    "mongoose": "^8.24.3",
     "next": "14.2.35",
     "next-auth": "^4.24.7",
+    "nodemailer": "^7.0.7",
+    "pusher": "^5.2.0",
+    "pusher-js": "^8.4.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
-    "zod": "^3.23.8",
-    "nodemailer": "^7.0.7"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.19",
@@ -35,7 +39,6 @@
     "eslint-config-next": "14.2.35",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5",
-    "@types/nodemailer": "^6.4.15"
+    "typescript": "^5"
   }
 }
